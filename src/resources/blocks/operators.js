@@ -265,6 +265,23 @@ function register() {
 
         return [`(${X || 0} * ${10})`, javascriptGenerator.ORDER_ATOMIC];
     })
+    registerBlock(`${categoryPrefix}divideten`, {
+        message0: '%1 / 10',
+        args0: [
+            {
+                "type": "input_value",
+                "name": "X",
+                "check": "Number"
+            },
+        ],
+        output: "Number",
+        inputsInline: true,
+        colour: categoryColor
+    }, (block) => {
+        const X = javascriptGenerator.valueToCode(block, 'X', javascriptGenerator.ORDER_ATOMIC);
+
+        return [`(${X || 0} / ${10})`, javascriptGenerator.ORDER_ATOMIC];
+    })
 
     // x - y
     registerBlock(`${categoryPrefix}minus`, {
@@ -290,6 +307,7 @@ function register() {
 
         return [`(${X || 0} - ${Y || 0})`, javascriptGenerator.ORDER_ATOMIC];
     })
+    
 
     // x * y
     registerBlock(`${categoryPrefix}multiply`, {
@@ -414,6 +432,23 @@ function register() {
         const Y = javascriptGenerator.valueToCode(block, 'Y', javascriptGenerator.ORDER_ATOMIC);
 
         return [`Math.floor(Math.random()*(${Y} - ${X} + 1) + ${X})`, javascriptGenerator.ORDER_ATOMIC];
+    })
+    registerBlock(`${categoryPrefix}fetch`, {
+        message0: 'fetch %1',
+        args0: [
+            {
+                "type": "input_value",
+                "name": "X",
+                "check": "String"
+            }
+        ],
+        output: "String",
+        inputsInline: true,
+        colour: categoryColor
+    }, (block) => {
+        const X = javascriptGenerator.valueToCode(block, 'X', javascriptGenerator.ORDER_ATOMIC);
+        const code = `fetch(\`${X}\`,;`;
+        return `${code}\n`;
     })
 }
 
