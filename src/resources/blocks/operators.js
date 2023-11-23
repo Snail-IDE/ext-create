@@ -447,7 +447,7 @@ function register() {
         colour: categoryColor
     }, (block) => {
         const X = javascriptGenerator.valueToCode(block, 'X', javascriptGenerator.ORDER_ATOMIC);
-        const code = `fetch(\`${X}\`,;`;
+        const code = `fetch(\`${X}\`,)`;
         return `${code}\n`;
     })
 }
