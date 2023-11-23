@@ -433,23 +433,6 @@ function register() {
 
         return [`Math.floor(Math.random()*(${Y} - ${X} + 1) + ${X})`, javascriptGenerator.ORDER_ATOMIC];
     })
-    registerBlock(`${categoryPrefix}fetch`, {
-        message0: 'fetch %1',
-        args0: [
-            {
-                "type": "input_value",
-                "name": "X",
-                "check": "String"
-            }
-        ],
-        output: "String",
-        inputsInline: true,
-        colour: categoryColor
-    }, (block) => {
-        const X = javascriptGenerator.valueToCode(block, 'X', javascriptGenerator.ORDER_ATOMIC);
-        const code = `fetch (\`${X}\`,)`;
-        return `${code}`;
-    })
 }
 
 export default register;
