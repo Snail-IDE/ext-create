@@ -58,6 +58,7 @@
         <block type="operators_randomint" />
         <sep gap="48"></sep>
         <block type="operators_join" />
+        <block type="operators_join3" />
         <block type="operators_letter" />
     </category>
     <category name="Conversions" colour="#8BC059">
