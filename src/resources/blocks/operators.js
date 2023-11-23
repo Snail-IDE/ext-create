@@ -248,6 +248,23 @@ function register() {
 
         return [`(${X || 0} + ${Y || 0})`, javascriptGenerator.ORDER_ATOMIC];
     })
+    registerBlock(`${categoryPrefix}timesten`, {
+        message0: '%1 * 10',
+        args0: [
+            {
+                "type": "input_value",
+                "name": "X",
+                "check": "Number"
+            },
+        ],
+        output: "Number",
+        inputsInline: true,
+        colour: categoryColor
+    }, (block) => {
+        const X = javascriptGenerator.valueToCode(block, 'X', javascriptGenerator.ORDER_ATOMIC);
+
+        return [`(${X || 0} * ${10})`, javascriptGenerator.ORDER_ATOMIC];
+    })
 
     // x - y
     registerBlock(`${categoryPrefix}minus`, {

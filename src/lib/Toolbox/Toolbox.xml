@@ -54,6 +54,7 @@
         <block type="operators_multiply" />
         <block type="operators_divide" />
         <block type="operators_power" />
+        <block type="operators_timesten" />
         <sep gap="48"></sep>
         <block type="operators_randomint" />
         <sep gap="48"></sep>
