@@ -135,8 +135,8 @@ class Compiler {
 
         const headerCode = [
             `/*`,
-            `   This extension was made with TurboBuilder!`,
-            `   https://turbobuilder-steel.vercel.app/`,
+            `   This extension was made with  Snail IDE - ExtCreate!`,
+            `   https://ext-create.vercel.app/`,
             `*/`,
             `(function (Scratch) {`,
             `const variables = {};`,
