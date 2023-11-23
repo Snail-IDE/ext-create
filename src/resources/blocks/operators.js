@@ -194,6 +194,35 @@ function register() {
 
         return [`(${String(X) || ''} + ${String(Y) || ''})`, javascriptGenerator.ORDER_ATOMIC];
     })
+    // join x + y + z
+    registerBlock(`${categoryPrefix}join3`, {
+        message0: 'join %1 %2 %3',
+        args0: [
+            {
+                "type": "input_value",
+                "name": "X",
+                "checks": "String"
+            },
+            {
+                "type": "input_value",
+                "name": "Y",
+                "checks": "String"
+            },
+            {
+                "type": "input_value",
+                "name": "Z",
+                "checks": "String"
+            }
+        ],
+        output: "String",
+        inputsInline: true,
+        colour: categoryColor
+    }, (block) => {
+        const X = javascriptGenerator.valueToCode(block, 'X', javascriptGenerator.ORDER_ATOMIC);
+        const Y = javascriptGenerator.valueToCode(block, 'Y', javascriptGenerator.ORDER_ATOMIC);
+        const Z = javascriptGenerator.valueToCode(block, 'Z', javascriptGenerator.ORDER_ATOMIC);
+        return [`(${String(X) || ''} + ${String(Y) || ''} + ${String(Z) || ''})`, javascriptGenerator.ORDER_ATOMIC];
+    })
 
     // x + y
     registerBlock(`${categoryPrefix}add`, {

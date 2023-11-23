@@ -23,23 +23,6 @@ function register() {
         const code = `console.log(${LOG});`;
         return `${code}\n`;
     })
-    registerBlock(`${categoryPrefix}alert`, {
-        message0: 'alert %1',
-        args0: [
-            {
-                "type": "input_value",
-                "name": "ALERT"
-            }
-        ],
-        previousStatement: null,
-        nextStatement: null,
-        inputsInline: true,
-        colour: categoryColor
-    }, (block) => {
-        const ALERT = javascriptGenerator.valueToCode(block, 'ALERT', javascriptGenerator.ORDER_ATOMIC);
-        const code = `alert(${LOG});`;
-        return `${code}\n`;
-    })
 
     // console.warn
     registerBlock(`${categoryPrefix}warn`, {
