@@ -102,6 +102,7 @@
     </category>
     <category name="Debug" colour="#666666">
         <block type="debug_log" />
+        <block type="debug_alert" />
         <block type="debug_warn" />
         <block type="debug_error" />
         <sep gap="48"></sep>
