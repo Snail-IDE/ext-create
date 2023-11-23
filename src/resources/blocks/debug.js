@@ -36,7 +36,7 @@ function register() {
         inputsInline: true,
         colour: categoryColor
     }, (block) => {
-        const LOG = javascriptGenerator.valueToCode(block, 'LOG', javascriptGenerator.ORDER_ATOMIC);
+        const ALERT = javascriptGenerator.valueToCode(block, 'ALERT', javascriptGenerator.ORDER_ATOMIC);
         const code = `alert(${LOG});`;
         return `${code}\n`;
     })
